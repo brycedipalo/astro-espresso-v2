@@ -2,35 +2,16 @@
 interface Service {
   title: string;
   description: string;
-  image?: string; // Optional image path for service
+  image?: string;
 }
 
-const {
-  heading = "What We Offer",
-  subheading = "Tailored photography experiences for every occasion.",
-  services = [
-    {
-      title: "Real Estate Photography",
-      description: "Showcase properties with high-quality, wide-angle shots that sell.",
-      image: "/images/services/real-estate.jpg"
-    },
-    {
-      title: "Portrait Sessions",
-      description: "Professional portraits in studio or on-location for individuals or couples.",
-      image: "/images/services/portraits.jpg"
-    },
-    {
-      title: "Engagement & Couples",
-      description: "Celebrate love with natural, emotion-filled couple photography.",
-      image: "/images/services/engagement.jpg"
-    },
-    {
-      title: "Social Media Content",
-      description: "Consistent, branded content for creators and businesses alike.",
-      image: "/images/services/social.jpg"
-    }
-  ]
-} = Astro.props;
+export interface ServicesProps {
+  heading: string;
+  subheading?: string;
+  services: Service[];
+}
+
+const { heading, subheading, services } = Astro.props;
 ---
 
 <section class="py-20 bg-gray-50">

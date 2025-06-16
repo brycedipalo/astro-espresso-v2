@@ -1,10 +1,18 @@
 ---
+export interface AboutProps {
+  heading: string;
+  intro: string;
+  bio: string;
+  imageSrc: string;
+  imageAlt?: string;
+}
+
 const {
-  heading = "About Blessy",
-  intro = "Capturing your moments with passion and creativity.",
-  bio = `With over 10 years of experience in professional photography, we specialize in creating timeless images that tell your unique story. Whether it's portraits, events, or real estate, we bring dedication and artistry to every shoot.`,
-  imageSrc = "/images/about/headshot.jpg",
-  imageAlt = "Photographer portrait"
+  heading,
+  intro,
+  bio,
+  imageSrc,
+  imageAlt
 } = Astro.props;
 ---
 
@@ -18,7 +26,6 @@ const {
       width="192"
       height="192"
     />
-
     <div class="max-w-xl text-center md:text-left">
       <h2 class="text-3xl font-bold text-gray-900">{heading}</h2>
       <p class="mt-2 text-lg text-gray-700">{intro}</p>

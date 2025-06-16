@@ -1,24 +1,27 @@
 ---
 export interface HeroProps {
-  imageUrl?: string;
-  heading?: string;
+  imageUrl: string;
+  heading: string;
   subheading?: string;
   ctaText?: string;
   ctaHref?: string;
+  altText?: string;
 }
 
 const {
-  imageUrl = "public/images/instagram/Hero.jpg",
-  heading = "Blessy Photography",
-  subheading = "Capturing the moments that matter",
-  ctaText = "View Portfolio",
-  ctaHref = "/portfolio",
+  imageUrl,
+  heading,
+  subheading,
+  ctaText,
+  ctaHref,
+  altText
 } = Astro.props;
 ---
 
 <section
   class="relative w-full h-screen bg-cover bg-center text-white"
   style={`background-image: url(${imageUrl})`}
+  aria-label={altText}
 >
   <div class="absolute inset-0 bg-black/40"></div>
 

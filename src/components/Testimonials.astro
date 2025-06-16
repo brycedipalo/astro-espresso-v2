@@ -4,36 +4,16 @@ interface Testimonial {
   quote: string;
   role?: string;
   avatar?: string;
-  rating?: number; // 1 to 5 stars
+  rating?: number;
 }
 
-const {
-  heading = "What Clients Are Saying",
-  subheading = "Real stories from happy clients who trusted us with their moments.",
-  testimonials = [
-    {
-    name: "Emily T.",
-    role: "Mother of Two",
-    quote: "Our family photos turned out beautifully — Blessi captured our personalities so well! We'll cherish these for years.",
-    avatar: "/images/testimonials/emily.jpg",
-    rating: 5
-    },
-    {
-      name: "Jordan K.",
-      role: "Real Estate Agent",
-      quote: "The listing photos helped sell the property in 3 days. Professional and fast!",
-      avatar: "/images/testimonials/jordan.jpg",
-      rating: 5
-    },
-    {
-      name: "Ava M.",
-      role: "Brand Owner",
-      quote: "Our social media engagement doubled thanks to the incredible product shots.",
-      avatar: "/images/testimonials/ava.jpg",
-      rating: 4
-    }
-  ]
-} = Astro.props;
+export interface TestimonialsProps {
+  heading: string;
+  subheading?: string;
+  testimonials: Testimonial[];
+}
+
+const { heading, subheading, testimonials } = Astro.props;
 ---
 
 <section class="py-20 bg-gray-50">
@@ -48,7 +28,6 @@ const {
             <img src={t.avatar} alt={t.name} class="h-12 w-12 rounded-full mb-4 object-cover" />
           )}
 
-          {/* Star rating */}
           {typeof t.rating === 'number' && (
             <div class="flex items-center mb-2 text-yellow-400">
               {[...Array(5)].map((_, index) => (
