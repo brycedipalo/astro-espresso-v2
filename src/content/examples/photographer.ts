@@ -84,5 +84,19 @@ export const photographerSite = {
     subheading: "From concept to camera, we bring your vision to life",
     buttonText: "Get In Touch",
     buttonHref: "/contact"
-  }
+  },
+  gallery: [
+    { src: "/assets/examples/photographer/gallery/01.jpg", alt: "Bride smiling at ceremony" },
+    { src: "/assets/examples/photographer/gallery/02.jpg", alt: "Wedding ring close-up" },
+    { src: "/assets/examples/photographer/gallery/03.jpg", alt: "Groom tying bowtie" },
+    { src: "/assets/examples/photographer/gallery/04.jpg", alt: "Family laughing together" },
+    { src: "/assets/examples/photographer/gallery/05.jpg", alt: "Wedding venue with flowers" },
+    { src: "/assets/examples/photographer/gallery/06.jpg", alt: "Couple dancing at reception" },
+    { src: "/assets/examples/photographer/gallery/07.jpg", alt: "Rustic outdoor ceremony setup" },
+    { src: "/assets/examples/photographer/gallery/08.jpg", alt: "Kids playing at wedding" },
+    { src: "/assets/examples/photographer/gallery/09.jpg", alt: "Reception decor and lights" },
+    { src: "/assets/examples/photographer/gallery/10.jpg", alt: "Engagement photo in forest" },
+    { src: "/assets/examples/photographer/gallery/11.jpg", alt: "Newborn baby in basket" },
+    { src: "/assets/examples/photographer/gallery/12.jpg", alt: "Dog at wedding" }
+  ]
 };

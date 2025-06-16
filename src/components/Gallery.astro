@@ -1,50 +1,30 @@
+---
+interface GalleryItem {
+  src: string;
+  alt: string;
+}
 
+export interface GalleryProps {
+  gallery: GalleryItem[];
+}
 
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-10">
-    <div class="grid gap-4">
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="/assets/examples/photographer/gallery/01.jpg"alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="/assets/examples/photographer/gallery/02.jpg " alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="/assets/examples/photographer/gallery/03.jpg" alt="">
-        </div>
-    </div>
-    <div class="grid gap-4">
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="/assets/examples/photographer/gallery/04.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="/assets/examples/photographer/gallery/05.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="/assets/examples/photographer/gallery/06.jpg" alt="">
-        </div>
-    </div>
-    <div class="grid gap-4">
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="/assets/examples/photographer/gallery/07.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="/assets/examples/photographer/gallery/08.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="/assets/examples/photographer/gallery/09.jpg" alt="">
-        </div>
-    </div>
-    <div class="grid gap-4">
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="/assets/examples/photographer/gallery/10.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="/assets/examples/photographer/gallery/11.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="/assets/examples/photographer/gallery/12.jpg" alt="">
-        </div>
-    </div>
-</div>
+const { gallery } = Astro.props;
+---
 
+<section class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-12">Gallery</h2>
 
+    <div class="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+      {gallery.map((item, i) => (
+        <img
+          key={i}
+          src={item.src}
+          alt={item.alt}
+          class="w-full mb-4 rounded-lg shadow object-cover break-inside-avoid"
+          loading="lazy"
+        />
+      ))}
+    </div>
+  </div>
+</section>
