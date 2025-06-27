@@ -16,7 +16,7 @@ const photographer: SiteConfig = {
     subheading:'Capturing the moments that matter',
     // We’ll adjust the link to point within this demo:
     ctaText:   'View Portfolio',
-    ctaHref:   '/photographer#gallery',
+    ctaHref:   '#gallery',
     altText:   'Bride and groom at sunset'
   },
   about:              { heading: '', intro: '', bio: '', imageSrc: '', imageAlt: '' },

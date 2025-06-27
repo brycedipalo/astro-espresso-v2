@@ -12,7 +12,7 @@ export const photographerSite = {
     heading: "Blessy Photography",
     subheading: "Capturing the moments that matter",
     ctaText: "View Portfolio",
-    ctaHref: "/portfolio",
+    ctaHref: "#portfolio",
     altText: "Bride and groom at sunset"
   },
 
